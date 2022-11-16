@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Proyecto</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="correo">Correo electronico</string>
+    <string name="boton1">Guardar</string>
+    <string name="t_registro">Registro</string>
+    <string name="nombre">Nombre y apellido</string>
+    <string name="dni">Número de identidad</string>
+    <string name="boton2">Atras</string>
+    <string name="t_bienvenida">Supermercado Don Baratón</string>
+    <string name="t_iniciar">Bienvenido</string>
+    <string name="boton3">Entrar</string>
+    <string name="boton4">Registrate</string>
+    <string name="boton5">Recuperar cuenta</string>
+    <string name="t_codigo">Codigo</string>
+    <string name="b_codigo">Generar Codigo</string>
+</resources>
