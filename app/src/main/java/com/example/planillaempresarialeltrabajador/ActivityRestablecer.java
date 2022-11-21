@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class ActivityRestablecer extends AppCompatActivity implements Response.L
     private String usuarioC;
     private int entrada = 0;
     private ImageButton disco;
+    private ImageView regresar;
 
     public boolean validar(String dato, int numero) {
         String opcion1 = "[a-z,0-9]{3,50}[@][a-z,0-9]{3,50}[.][a-z]{2,10}";
@@ -63,7 +65,11 @@ public class ActivityRestablecer extends AppCompatActivity implements Response.L
         clave = (EditText) findViewById(R.id.txtclave1);
         request = Volley.newRequestQueue(getApplicationContext());
         disco = (ImageButton) findViewById(R.id.discoloco);
+        regresar=(ImageView) findViewById(R.id.imgVolver) ;
+        regresar.setOnClickListener(this::onClickRegresar);
     }
+
+
 
     public void generarcodigo1(View view) {
         if (validar(correo.getText().toString(), 1)) {
@@ -160,5 +166,9 @@ public class ActivityRestablecer extends AppCompatActivity implements Response.L
     }
     public boolean onKeyDown(int keyCode, KeyEvent event){
         return false;
+    }
+
+    public void onClickRegresar(View view) {
+        startActivity(new Intent(ActivityRestablecer.this,ActivityIniciar.class));
     }
 }

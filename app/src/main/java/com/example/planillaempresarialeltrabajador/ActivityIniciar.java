@@ -16,6 +16,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -42,6 +43,8 @@ public class ActivityIniciar extends AppCompatActivity implements Response.Liste
     private Spinner spinner1;
     private int nesecidad=1,entrada=1;
     private Intent viajarpagina;
+    TextView registro, forgetpass;
+    private Button iniciarsesion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,11 @@ public class ActivityIniciar extends AppCompatActivity implements Response.Liste
         request= Volley.newRequestQueue(getApplicationContext());
         sesion1=(ImageButton) findViewById(R.id.entrar);
         ChekClave=(CheckBox) findViewById(R.id.checkBoxC);
+        forgetpass.setOnClickListener(this::onClickForget);
+        registro.setOnClickListener(this::onClickCreateUser);
+        iniciarsesion = (Button) findViewById(R.id.btnInicarSession);
+
+
         SharedPreferences preferencias1=getSharedPreferences("usuario", Context.MODE_PRIVATE);
         user.setText(preferencias1.getString("user",""));
         SharedPreferences preferencias2=getSharedPreferences("clave", Context.MODE_PRIVATE);
@@ -81,6 +89,13 @@ public class ActivityIniciar extends AppCompatActivity implements Response.Liste
             }
         });
     }
+
+    private void onClickCreateUser(View view) {
+    }
+
+    private void onClickForget(View view) {
+    }
+
     public void correo(){
         Intent enviar=new Intent(this,ActivityReenviar.class);
         enviar.putExtra("user",user.getText().toString().toLowerCase());

@@ -4,24 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo3"
     tools:context=".ActivityRestablecer">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="357dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="20dp"
-        android:text="Restablecer contraseña"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold|italic"
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_margin="0dp"
+
+        android:background="#823E24"
+        android:orientation="horizontal"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <ImageView
+            android:id="@+id/imgVolver"
+            android:layout_width="44dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onClickRegresar"
+
+
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            tools:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="357dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="Restablecer contraseña"
+            android:textColor="#FFFFFF"
+            android:textSize="29sp"
+            android:textStyle="bold|italic" />
+
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/txtcorreo1"
@@ -33,7 +60,7 @@
         android:hint="@string/correo"
         android:inputType="textEmailAddress"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#80000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +78,7 @@
         android:hint="@string/t_codigo"
         android:inputType="number"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#80000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,9 +89,10 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="51dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/radiusbutton"
         android:onClick="generarcodigo1"
         android:text="@string/b_codigo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,14 +112,14 @@
         android:hint="Nueva contraseña"
         android:inputType="textPassword"
         android:textColor="#64FD39"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#80040404"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631" />
+        app:layout_constraintVertical_bias="0.558" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -117,7 +145,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.963"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.86"

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
@@ -27,6 +28,7 @@ public class ActivityRecuperar extends AppCompatActivity implements Response.Lis
     private String usuarioC;
     private int entrada=0;
     private ImageButton ojo;
+    ImageView imgRegresar;
     public boolean validar(String dato,int numero){
         String opcion1="[a-z,0-9]{3,50}[@][a-z,0-9]{3,50}[.][a-z]{2,10}";
         String opcion2="[a-z,0-9]{3,50}[.][a-z,0-9]{3,50}[@][a-z,0-9]{3,50}[.][a-z]{2,10}";
@@ -51,6 +53,9 @@ public class ActivityRecuperar extends AppCompatActivity implements Response.Lis
         correo=(EditText) findViewById(R.id.txtcorreo);
         codigo=(EditText) findViewById(R.id.txtcodigo);
         usuario=(TextView) findViewById(R.id.txtusuario);
+        imgRegresar=(ImageView) findViewById(R.id.imgVolver);
+        imgRegresar.setOnClickListener(this::onClickRegresar);
+
         request= Volley.newRequestQueue(getApplicationContext());
         ojo=(ImageButton) findViewById(R.id.ojoloco);
     }
@@ -134,7 +139,7 @@ public class ActivityRecuperar extends AppCompatActivity implements Response.Lis
         codigo.setText("");
         ojo.setVisibility(View.INVISIBLE);
     }
-    public void retroceder(View view){
+    public void onClickRegresar(View view){
         usuario.setText("XXXXXXXXXX");
         correo.setText("");
         codigo.setText("");
